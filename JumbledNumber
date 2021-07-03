@@ -1,0 +1,31 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+	 int num = 1253;
+	 string n = num.ToString();
+	 bool jumbled = true;
+		int n1,n2;
+	 for(int i=0;i<n.Length-1;i++)
+	 {
+		 n1 = (int)Char.GetNumericValue(n[i]);
+		 n2 = (int)Char.GetNumericValue(n[i+1]);
+		 if(Math.Abs(n1-n2)>1)
+		 {
+		   jumbled =false;
+		 }
+	 }
+		
+	 if(jumbled)
+	 {
+	   Console.WriteLine("jumbled");
+	 }
+	 else
+	 {
+	   Console.WriteLine("not jumbled");
+	 }
+	}
+	
+}
