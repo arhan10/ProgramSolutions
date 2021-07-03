@@ -1,0 +1,28 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Array a1 = Array.CreateInstance(typeof(int),4);
+		a1.SetValue(10,0);
+		a1.SetValue(11,1);
+		a1.SetValue(12,2);
+		a1.SetValue(13,3);
+		/*for(int i=a1.GetLowerBound(0);i<=a1.GetUpperBound(0);i++)
+		{
+		Console.WriteLine(a1.GetValue(i));
+		}*/
+		int c=1;
+		Array a2 = Array.CreateInstance(typeof(int),new int[1]{5},new int[1]{1});
+		foreach(int element in a1)
+		{
+		a2.SetValue(element,c++);
+		}
+		
+		for(int i=1;i<5;i++)
+		{
+		   Console.Write(a2.GetValue(i)+"\0");
+		}
+	}
+}
