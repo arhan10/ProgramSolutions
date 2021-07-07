@@ -1,0 +1,33 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		int[] arr = {5,1,4,2,3};
+		shellsort(arr);
+		foreach(var item in arr)
+			Console.Write(item+" ");
+	}
+	
+	public static void shellsort(int[] arr)
+	{
+	   int i,j,n,gap;
+		n=arr.Length;
+		int unSorted;
+		for(gap = n/2 ; gap > 0 ; gap = gap/2)
+		{
+		
+			for(i=gap;i<n;i++)
+			{
+			  unSorted = arr[i];
+			  for(j=i;j>=gap && arr[j-gap] > unSorted;j-=gap)
+			  {
+			     arr[j] = arr[j-gap];
+			  }
+			  arr[j]  = unSorted;
+			
+			}
+		}
+	}
+}
